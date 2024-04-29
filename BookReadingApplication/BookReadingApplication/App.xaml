@@ -4,5 +4,6 @@
              xmlns:local="clr-namespace:BookReadingApplication"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <ResourceDictionary Source="Themes/LightTheme.xaml"/>
     </Application.Resources>
 </Application>

@@ -4,48 +4,49 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
-    <ImplicitUsings>disable</ImplicitUsings>
+    <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <UseWindowsForms>True</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Icons\AppIcon.ico" />
-    <None Remove="Icons\Folder.ico" />
-    <None Remove="Icons\Printing.ico" />
+    <None Remove="Resources\AddTab.ico" />
+    <None Remove="Resources\App.ico" />
+    <None Remove="Resources\CloseTab.ico" />
+    <None Remove="Resources\Folder.ico" />
+    <None Remove="Resources\Printing.ico" />
+    <None Remove="Resources\ReadBook.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Icons\AppIcon.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="FB2Library" Version="1.3.3" />
-    <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
+    <PackageReference Include="IronPdf" Version="2024.4.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="PdfiumViewer" Version="2.13.0" />
-    <PackageReference Include="PDFsharp" Version="6.0.0" />
-    <PackageReference Include="Syncfusion.DocIORenderer.Net.Core" Version="25.1.41" />
-    <PackageReference Include="Syncfusion.Licensing" Version="25.1.41" />
     <PackageReference Include="Syncfusion.Pdf.Net.Core" Version="25.1.41" />
-    <PackageReference Include="Syncfusion.PdfViewer.Windows" Version="25.1.41" />
     <PackageReference Include="Syncfusion.PdfViewer.WPF" Version="25.1.41" />
-    <PackageReference Include="Syncfusion.Shared.WPF" Version="25.1.41" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="FB2Library">
-      <HintPath>..\..\..\..\fb2librarynet\trunk\bin\Release\FB2Library.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Icons\Folder.ico" />
-    <Resource Include="Icons\Printing.ico" />
+    <Resource Include="Resources\App.ico" />
+    <Resource Include="Resources\Folder.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="SaveBooks\" />
+    <Folder Include="JsonFiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>
